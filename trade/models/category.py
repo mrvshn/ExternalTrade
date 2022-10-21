@@ -1,11 +1,10 @@
 from django.db import models
 from autoslug import AutoSlugField
+from trade.abstract_models import DateAbstractModel
 # from ckeditor.fields import RichTextField
 
 
-class Category(models.Model):
-    pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    edit_date = models.DateTimeField(auto_now=True, null=True)
+class Category(DateAbstractModel):
     name = models.CharField(max_length=200)
     # title = models.CharField(max_length=200)
     # title_image = models.ImageField()
